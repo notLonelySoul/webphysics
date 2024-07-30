@@ -32,22 +32,34 @@ const makeLayout = (target) => {
     target.append(preview);
     target.append(options);
 
+    const textDiv = document.createElement("div");
+    textDiv.className = "text";
+
     const welcome = document.createElement("h1");
     welcome.innerText = "WELCOME";
     welcome.className = "title";
-    preview.append(welcome)
 
     const para = document.createElement("p");
     para.innerText = "Choose any of the options on the right to get started."
     para.className = "para"
-    preview.append(para)
+
+    textDiv.append(welcome)
+    preview.append(textDiv)
+    preview.append(para);
+
+    const optionData = ["Pendulum", "Box & Friction", "Spring stuff", "SHM & Waves"]
 
     for (let i = 0; i < 10; i++) {
         const option = document.createElement("div");
         option.className = "option";
-        option.innerText = `${i}`;
+        option.id = `${i}`;
+        option.innerText = optionData[i];
         options.append(option);
     }
+}
+
+const fillOptions = (target) => {
+    
 }
 
 const scaleAnim = (target, [top, left], duration) => {
