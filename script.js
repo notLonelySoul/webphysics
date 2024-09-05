@@ -59,7 +59,7 @@ const makeLayout = (target) => {
 }
 
 const fillOptions = (target) => {
-    
+    const pendulumOption = document.querySelector(".option #0");
 }
 
 const scaleAnim = (target, [top, left], duration) => {
